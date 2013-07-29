@@ -1,3 +1,11 @@
+## Relevant repositories
+
+* [grape](https://github.com/intridea/grape)
+* [swagger-ui](https://github.com/wordnik/swagger-ui)
+* [grape-entity](https://github.com/intridea/grape-entity)
+* [grape-swagger](https://github.com/tim-vandecasteele/grape-swagger)
+* [swagger-ui_rails](https://github.com/d4be4st/swagger-ui_rails)
+
 ## Preparing application
 
 Add to your Gemfile:
