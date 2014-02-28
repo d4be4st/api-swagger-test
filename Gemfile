@@ -26,7 +26,8 @@ end
 
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'grape'
-gem 'grape-entity'
-gem 'grape-swagger'
-gem 'swagger-ui_rails'
+
+gem 'grape', '0.6.1'
+gem 'grape-entity', '0.3.0'
+gem 'grape-swagger', '0.7.6', :github => 'd4be4st/grape-swagger'
+gem 'swagger-ui_rails', '0.1.7'

@@ -1,18 +1,16 @@
-module Users
+module API_v1
 
-  class Entity < Grape::Entity
+  class UserEntity < Grape::Entity
     expose :email
     expose :username
   end
 
-  class API < Grape::API
+  class Users < Grape::API
 
-    desc 'Get all users', {
-      :object_fields => Users::Entity.documentation
-    }
+    desc 'Get all users'
     get :users do
       users = User.all
-      present users, with: Users::Entity
+      present users, with: API_v1::UserEntity
     end
 
     desc 'Get one user'

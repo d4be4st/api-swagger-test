@@ -1,5 +1,5 @@
 ApiSwagger::Application.routes.draw do
 
-  mount API::Root => '/'
-  get 'api/docs' => 'api_docs#index'
+  mount API::Root_v1 => '/'
+  get 'api/:version/docs' => 'api#docs', version: /[A-Za-z0-9\.]+?/
 end

@@ -10,10 +10,10 @@
 
 Add to your Gemfile:
 
-    gem 'grape'
-    gem 'grape-entity'
-    gem 'grape-swagger'
-    gem 'swagger-ui_rails'
+    gem 'grape', '0.6.1'
+    gem 'grape-entity', '0.3.0'
+    gem 'grape-swagger', '0.7.6', :github => 'd4be4st/grape-swagger'
+    gem 'swagger-ui_rails', '0.1.7'
 
 ## Adding swagger-ui
 
@@ -35,9 +35,9 @@ please read [grape documentation](https://github.com/intridea/grape)
 
 ### Example
 
-    module Users
+    module API
 
-      class API < Grape::API
+      class Users < Grape::API
 
         desc 'Get all users'
         get :users do
@@ -78,7 +78,7 @@ please read [grape-swagger documentation](https://github.com/tim-vandecasteele/g
         version 'v1'
         format :json
 
-        mount Users::API
+        mount API::Users
         add_swagger_documentation api_version: 'v1', hide_documentation_path: true, hide_format: true
       end
 
@@ -101,14 +101,14 @@ Use [grape-entities](https://github.com/intridea/grape#restful-model-representat
 
 ### Example
 
-    module Users
+    module API
 
-      class Entity < Grape::Entity
+      class UserEntity < Grape::Entity
         expose :email
         expose :username
       end
 
-      class API < Grape::API
+      class Users < Grape::API
 
         desc 'Get all users'
         get :users do
